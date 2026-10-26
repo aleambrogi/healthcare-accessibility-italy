@@ -1,0 +1,121 @@
+---
+title: "Step 3 - Dataset Start"
+format: html
+editor: visual
+---
+
+# Search of hospital with Pronto Soccorso
+
+### Set working directory
+
+```{r Work Director, include=FALSE}
+'set working directory'
+'consiglio di usare GitHub per lo script'
+
+# Calcola il percorso della cartella padre
+parent_dir <- dirname(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# Imposta il root.dir con knitr
+knitr::opts_knit$set(root.dir = parent_dir)
+
+# Verifica il risultato
+setwd(knitr::opts_knit$get("root.dir"))
+getwd()
+```
+
+```{r Libraries, include=FALSE}
+library(sf)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r Dataset, include=FALSE}
+#setwd(knitr::opts_knit$get("root.dir"))
+grid_points <- read.csv('tempi_percorrenza_centroidi_ps.csv') %>%
+  st_as_sf(coords = c("grid_longitude", "grid_latitude"), crs = 4326)
+middle_points_istat <- read.csv('dati_istat_pop_1km2.csv') %>%
+  st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
+
+```
+
+```{r}
+table1_with_table2 <- st_join(grid_points, middle_points_istat, join = st_nearest_feature)
+```
+
+```{r}
+table1_with_table2
+```
+
+```{r}
+table1_with_table2 <- table1_with_table2 %>%
+  select(-OBJECTID, -GRD_ID, -CNTR_ID, )
+```
+
+```{r}
+
+# 💾 Save the final merged table
+
+
+st_write(table1_with_table2, "merged_table.gpkg", delete_layer = TRUE)
+
+
+
+table1_with_table2 <- table1_with_table2 %>%
+  mutate(latitude = st_coordinates(table1_with_table2)[, 2],  # Latitude is the second column
+         longitude = st_coordinates(table1_with_table2)[, 1])  # Longitude is the first column
+
+write.csv(st_drop_geometry(table1_with_table2), "merged_table_with_lat_lon.csv", row.names = FALSE)
+
+```
+
+```{r}
+table1_with_people <- table1_with_table2 %>%
+  filter(TOT_P_2021 != 0)
+
+```
+
+```{r}
+table1_with_people <- table1_with_people %>%
+  mutate(TOT_P_2021 = ceiling(TOT_P_2021 / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(M = ceiling(M / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(F = ceiling(F / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(Y_LT15 = ceiling(Y_LT15 / 4))
+
+table1_with_people <- table1_with_people %>%
+  mutate(Y1564 = ceiling(Y1564 / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(Y_GE65 = ceiling(Y_GE65 / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(NAT = ceiling(NAT / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(EU_OTH = ceiling(EU_OTH / 4))
+
+table1_with_people <- table1_with_people %>%
+  mutate(OTH = ceiling(OTH / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(EMP = ceiling(EMP / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(SAME = ceiling(SAME / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(CHG_IN = ceiling(CHG_IN / 4))
+table1_with_people <- table1_with_people %>%
+  mutate(CHG_OUT = ceiling(CHG_OUT / 4))
+```
+
+\
+
+```{r}
+
+# 💾 Save the resulting table as CSV
+write.csv(st_drop_geometry(table1_with_people), "points_with_people.csv", row.names = FALSE)
+
+# 💾 Save the resulting table as GeoPackage (GPKG)
+st_write(table1_with_people, "points_with_people.gpkg", delete_layer = TRUE)
+
+```
+
+\
