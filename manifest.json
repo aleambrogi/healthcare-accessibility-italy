@@ -1,0 +1,132 @@
+[
+  {
+    "file": ".gitignore",
+    "bytes": 135,
+    "sha256": "b38121a5b74d4dae9dce97c7ec22582f48c70c0c80a4f93a44853bcefae702e4"
+  },
+  {
+    "file": "data/processed/mixed_model_dataset.csv",
+    "bytes": 2940935,
+    "sha256": "7395fdbcc4a64e35941836535a748ff0886c107d4e37a6d0d0fcb9b642241006"
+  },
+  {
+    "file": "data/processed/ps_definitivi.csv",
+    "bytes": 108014,
+    "sha256": "c2978efcc4d611272059a1772b98b9fd87d4c051a12210149327c7a07caec254"
+  },
+  {
+    "file": "data/processed/ps_definitivi_con_popolazioni_fasce.csv",
+    "bytes": 135033,
+    "sha256": "ca8ff63a93cbdfa05be7dfeef344b75f4c958f376e7c5cae088257be09584fd4"
+  },
+  {
+    "file": "data/processed/ps_stress.csv",
+    "bytes": 214192,
+    "sha256": "e4cc7d7fb538f131b2971fdfd07ad00e16e2af1eb46d66b93564179eef84a2f3"
+  },
+  {
+    "file": "data/processed/stress_comuni.csv",
+    "bytes": 647169,
+    "sha256": "dbeef9ca8afb374bfbf3df5ec3d57d7329e609fdd8980235a31bcd42253a3dbb"
+  },
+  {
+    "file": "data/processed/stress_province.csv",
+    "bytes": 6575,
+    "sha256": "eaaf986e45d6bbb3b5f4d6b57986081e063f08447166461e827352422c7bed6d"
+  },
+  {
+    "file": "data/processed/stress_regioni.csv",
+    "bytes": 1179,
+    "sha256": "dee334d37dd9b1f59b3b65ad13c00c613eedb2421582bc928332ef3c0a922652"
+  },
+  {
+    "file": "DATA.md",
+    "bytes": 1724,
+    "sha256": "6b9db168e7be37891bc573b905e0b5261414eb2bad64a3d8be1ff677fc31d866"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2960,
+    "sha256": "1b60aeace95b7a5d3841f988e67d61cd1932209a3f100f358772419b5b391479"
+  },
+  {
+    "file": "REPRODUCIBILITY.md",
+    "bytes": 1798,
+    "sha256": "d9e80dbd7227c41c097e783431608ae0fc508b2273459b1e6da9d64094999acf"
+  },
+  {
+    "file": "requirements.txt",
+    "bytes": 30,
+    "sha256": "76fd9dd57e1080a3e32fd47743bc1f13d6c393f03a2b1c33560f63cfff9166e0"
+  },
+  {
+    "file": "research/notebooks/accessibility_index.ipynb",
+    "bytes": 11863,
+    "sha256": "c738b601af6ae8656f3eccacb8be24424c0fc34f2883cb8ed933b7fd8c9f81f8"
+  },
+  {
+    "file": "research/notebooks/distances_finale_corretto.ipynb",
+    "bytes": 33150,
+    "sha256": "231dedf510d912563d25a6bc6f185b7ed1b156cc425b96f4c07638a475b6b0e1"
+  },
+  {
+    "file": "research/notebooks/merge_full_dataset.ipynb",
+    "bytes": 11906,
+    "sha256": "d2d99806ebefd69c3607bdd8ecafef1e24aa13b61aad8dd7323a4ec880af37b0"
+  },
+  {
+    "file": "research/notebooks/merge_istat.ipynb",
+    "bytes": 2026,
+    "sha256": "9fa40ac6fa84c2c1bd84428ff2d6b012ca5632d29fdb7e32845c3eedc969405f"
+  },
+  {
+    "file": "research/notebooks/weighted_pop.ipynb",
+    "bytes": 5206,
+    "sha256": "f2d28f7c83329ce4c16d5d8cf582daef95159182b1aebef8d4fe6437b6782468"
+  },
+  {
+    "file": "research/R/istat MERGE PS_TIME.qmd",
+    "bytes": 3203,
+    "sha256": "a777d36f0885867a6a7ae07d4e26ec1d8462c9d9feb29c86e8ef99b16ee005f2"
+  },
+  {
+    "file": "research/R/mappa_interattiva.R",
+    "bytes": 6944,
+    "sha256": "7fd542cd77dbc47ee6304424d5308bda9246ebd174ac3f5a0f89b5230a1222ef"
+  },
+  {
+    "file": "research/R/model_creation.R",
+    "bytes": 11170,
+    "sha256": "7d02ca7202a78080e8a957a7519db5633c1763d6c484ff18166232c7fe51a349"
+  },
+  {
+    "file": "research/R/REGRESSION_MODEL_ORDINATO.R",
+    "bytes": 12523,
+    "sha256": "d7ce64c9ddd4343bea851e7100d5af3f4a091d9711831d59fa0923f6647ef485"
+  },
+  {
+    "file": "research/R/travel_time_analysis.R",
+    "bytes": 7035,
+    "sha256": "9ac690b6a97876225b716688d6432de476ee98810b8d8676ea357773ee24ba83"
+  },
+  {
+    "file": "results/icf.png",
+    "bytes": 196672,
+    "sha256": "bd23e06c8b110480a0bec36a579c60fff8da90d5664b0503100dabe9dc456343"
+  },
+  {
+    "file": "results/indice_popolazione_aggiustato.png",
+    "bytes": 213001,
+    "sha256": "754d732812760c7d549079e366f856e4dcf4d2b5f6e66dd16b6371b62bd0b77a"
+  },
+  {
+    "file": "results/ProvCM2021.png",
+    "bytes": 437254,
+    "sha256": "7cd4ea4b0aca6eee39a268c0d8d0e0c6b2f8a330cf64a0ef8b84f8e581c0f200"
+  },
+  {
+    "file": "scripts/summarise_accessibility.py",
+    "bytes": 1347,
+    "sha256": "ed64e380d70d78d36d8925f60470fa6ec941365fdfa686cf506a936c8fe9e20f"
+  }
+]
